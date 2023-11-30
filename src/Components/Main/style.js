@@ -21,6 +21,9 @@ Wrapper.Text = styled.div`
 Wrapper.Title = styled.h3`
   font-size: 53px;
   color: #252f3d;
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 `;
 Wrapper.Span = styled.span`
   background-color: #252f3d;
@@ -35,4 +38,8 @@ Wrapper.Desc = styled.p`
   border: 1px solid #7d7b7c;
   padding: 10px;
   border-radius: 20px;
+  @media (max-width: 767px) {
+    font-size: 12px;
+    padding: 10px 5px;
+  }
 `;
