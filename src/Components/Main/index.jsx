@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Wrapper } from "./style";
-import "./style.css";
+import vid from "../../assets/video/PCP.mp4";
 const Main = () => {
+  const videoRef = useRef(null);
+  const videoUrl = process.env.PUBLIC_URL + "/myVideo.mp4";
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      video.play().catch((error) => {
+        // Autoplay was blocked, handle the error or provide a user interaction to start the video.
+        console.error("Autoplay was blocked:", error);
+      });
+    }
+  }, []);
   return (
     <Wrapper>
+      <Wrapper.Bg />
+      <Wrapper.Navbar>
+        <Wrapper.Logo>Poison Cuts Poison </Wrapper.Logo>
+        <Wrapper.Button>Try it</Wrapper.Button>
+      </Wrapper.Navbar>
       <Wrapper.Text>
-        <Wrapper.Title>
-          Assalomu alaykum <Wrapper.Span>PCP</Wrapper.Span>
-        </Wrapper.Title>
-        <Wrapper.Desc>
-          Sababi biz sizga yanada kuchliroq himoyani taklif qilishni istaymiz.{" "}
-          <br />
-          Yangilanish Sanasi 2023.11.26 <br />
-        </Wrapper.Desc>
-        <Wrapper.Desc>
-          PCP himoya tizimi vaqtinchalik serverdan olib qo‘yildi!
-        </Wrapper.Desc>
+        <Wrapper.Slogan>the new technology of cyber security </Wrapper.Slogan>
+        <Wrapper.Info>
+          We fight against cybercrime and ensure the safety of individuals and
+          organizations. Our cutting-edge technology detects and prevents cyber
+          attacks.
+        </Wrapper.Info>
       </Wrapper.Text>
+      <Wrapper.VideoPlayer
+        ref={videoRef}
+        width="560"
+        height="315"
+        controls
+        autoPlay>
+        <source src={vid} type="video/mp4" />
+        Your browser does not support the video tag.
+      </Wrapper.VideoPlayer>{" "}
     </Wrapper>
   );
 };
