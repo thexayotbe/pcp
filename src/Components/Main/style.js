@@ -37,6 +37,7 @@ Wrapper.Logo = styled.div`
   letter-spacing: -0.64px;
 `;
 Wrapper.Button = styled.button`
+  cursor: pointer;
   width: 180px;
   height: 45px;
   border-radius: 100px;
@@ -91,6 +92,7 @@ Wrapper.Info = styled.div`
 `;
 
 Wrapper.VideoPlayer = styled.video`
+  cursor: pointer;
   display: flex;
   justify-content: center;
   margin: 80px auto;

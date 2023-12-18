@@ -6,4 +6,5 @@
 }
 body {
   background: #232323;
+  overflow-x: hidden;
 }
